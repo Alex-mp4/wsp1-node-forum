@@ -1,14 +1,21 @@
+{% extends "layout.njk" %}
+{% block  content %}
 <a href="/">Forum</a>
 <form action="/new" method="post">
     <label for="author">Författare</label>
+    <label for="title" class="title">Titel</label>
+    <br>
     <select name="author" id="author">
         {% for user in users %}
             <option value="{{ user.id }}">{{ user.name }}</option>
         {% endfor %}
     </select>
-    <label for="title">Titel</label>
     <input type="text" name="title" id="title">
+    <br>
     <label for="content">Innehåll</label>
+    <br>
     <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    <br>
     <button type="submit">Skicka</button>
 </form>
+{% endblock %}

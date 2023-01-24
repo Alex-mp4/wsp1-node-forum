@@ -1,9 +1,31 @@
 @use "reset";
 
 body {
-    background-color: red;
+    background-color: rgb(219, 219, 219);
+    width: min(80ch, 100vw - 2rem);
+    margin-inline: auto;
+}
+
+a {
+    color: #008094;
+}
+
+input {
+    width: 49.6%;
+}
+
+.title {
+    margin-left: 39.7%;
+}
+
+select {
+    width: 49.6%;
+}
+
+textarea {
+    width: 100%;
 }
 
 button:hover {
-    
+
 }
