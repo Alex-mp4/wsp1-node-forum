@@ -11764,11 +11764,6 @@ body {
   background-color: rgb(219, 219, 219);
 }
 
-body:hover {
-  transform: rotate(360deg);
-  transition: all 0.3s ease-in-out 0s;
-}
-
 main {
   width: min(80ch, 100vw - 2rem);
   margin-inline: auto;
@@ -11792,31 +11787,6 @@ select {
 
 textarea {
   width: 100%;
-}
-
-input:hover {
-  transform: rotate(360deg);
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.title:hover {
-  transform: rotate(360deg);
-  transition: all 0.3s ease-in-out 0s;
-}
-
-select:hover {
-  transform: rotate(360deg);
-  transition: all 0.3s ease-in-out 0s;
-}
-
-textarea:hover {
-  transform: rotate(360deg);
-  transition: all 0.3s ease-in-out 0s;
-}
-
-button:hover {
-  transform: rotate(360deg);
-  transition: all 0.3s ease-in-out 0s;
 }
 
 .hr {
