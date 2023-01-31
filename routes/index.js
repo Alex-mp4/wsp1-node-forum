@@ -9,10 +9,6 @@ const pool = mysql.createPool({
 });
 const promisePool = pool.promise();
 
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
-const cpUpload = upload.fields([{ name: 'avatar', maxCount: 1 }, { name: 'gallery', maxCount: 8 }])
-
 module.exports = router;
 
 router.get('/', async function (req, res, next) {
@@ -23,7 +19,7 @@ router.get('/', async function (req, res, next) {
     });
 });
 
-router.post('/new', upload.single('avatar'), async function (req, res, next) {
+router.post('/new', async function (req, res, next) {
     const { author, title, content } = req.body;
 
     // Skapa en ny författare om den inte finns men du behöver kontrollera om användare finns!
