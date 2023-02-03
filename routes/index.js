@@ -12,9 +12,17 @@ const promisePool = pool.promise();
 module.exports = router;
 
 router.get('/', async function (req, res, next) {
-    const [rows] = await promisePool.query("SELECT * FROM adh31forum ORDER BY createdAt DESC");
+    const [rows] = await promisePool.query("SELECT * FROM adh31forum JOIN adh31users ON adh31forum.authorId = adh31users.id ORDER BY createdAt DESC");
     res.render('index.njk', {
         rows: rows,
+        title: 'Forum',
+    });
+});
+
+router.get('/post/:id', async function (req, res, next) {
+    const [rows] = await promisePool.query("SELECT adh31forum.*, adh31users.name AS username FROM adh31forum JOIN adh31users ON adh31forum.authorId = adh31users.id WHERE adh31forum.id = ?;", [req.params.id]);
+    res.render('post.njk', {
+        post: rows[0],
         title: 'Forum',
     });
 });
